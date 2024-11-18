@@ -180,3 +180,83 @@ footer a:hover {
     transform: translateY(0);
   }
 }
+
+/* Responsive Styles (Mobile and Tablet) */
+
+/* Mobile: Less padding, smaller font sizes, single column layout */
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #searchBar {
+    width: 80%;
+    margin: 15px auto;
+  }
+
+  section {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  li a {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet: Medium screens, like iPads, use a slightly larger layout */
+@media only screen and (max-width: 1024px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  #searchBar {
+    width: 75%;
+    margin: 20px auto;
+  }
+
+  section {
+    width: 90%;
+    margin: 25px auto;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li a {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
