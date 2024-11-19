@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section, index) => {
         section.style.opacity = "0";
         section.style.transform = "translateY(20px)";
-        section.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`;
+        section.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`; // Fixed transition syntax
     });
 
     // Set timeout to apply the fade-in effect after loading
