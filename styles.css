@@ -5,7 +5,7 @@ body, html {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   color: #333333; /* Dark grayish text for readability */
-  background: #aee1f2; /* Soft pastel blue background */
+  background: #e5e5e5; /* Light grey background */
   height: 100%; /* Ensure full screen height for canvas */
   position: relative; /* Keep content above canvas */
 }
@@ -14,9 +14,9 @@ body, html {
 header {
   position: relative;
   z-index: 1;
-  background-color: #fff8e1; /* Very light beige header */
+  background-color: #004d66; /* Dark teal header */
   padding: 15px 30px;
-  color: #333333;
+  color: #ffffff; /* White text for contrast */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,9 +28,56 @@ header h1 {
   font-weight: 700;
 }
 
+/* Navigation Menu */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007080; /* Teal background */
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* White text */
+}
+
+.navbar .toggle {
+  display: none;
+  font-size: 24px;
+  color: #ffffff; /* White text */
+  cursor: pointer;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Ensure all links are visible */
+}
+
+.navbar .menu li {
+  margin-left: 10px; /* Adjusted for better alignment */
+}
+
+.navbar .menu a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  padding: 10px 15px; /* Adjusted for better alignment */
+  background-color: #007080; /* Teal background */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+  background-color: #009090; /* Lighter teal background */
+  color: #ffffff; /* White text */
+}
+
 /* Navigation Links */
 nav ul li a {
-  color: #333333;
+  color: #007080; /* Teal text */
   text-decoration: none;
   font-size: 1rem;
   padding: 8px 15px;
@@ -38,8 +85,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background: #ffab91; /* Soft coral hover */
-  color: #fff;
+  background: #b3e5e5; /* Light teal hover */
+  color: #004d66; /* Darker teal text */
   border-radius: 5px;
 }
 
@@ -53,7 +100,7 @@ nav ul li a:hover {
   border-radius: 25px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.75); /* Slightly transparent white */
-  color: #333;
+  color: #004d66; /* Dark teal text */
   font-size: 1rem;
   outline: none;
   transition: background 0.4s ease;
@@ -81,7 +128,7 @@ section h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #80cbc4; /* Pastel teal for headings */
+  color: #66b3b3; /* Light teal for headings */
   text-transform: uppercase;
 }
 
@@ -98,8 +145,8 @@ li a {
   display: block;
   padding: 15px;
   text-align: center;
-  background: #ffccbc; /* Light peach background */
-  color: #333;
+  background: #e0f5f5; /* Light teal background */
+  color: #004d66; /* Dark teal text */
   border-radius: 10px;
   text-decoration: none;
   font-size: 1rem;
@@ -109,7 +156,7 @@ li a {
 }
 
 li a:hover {
-  background: #e1bee7; /* Pastel lavender on hover */
+  background: #b3e5e5; /* Light teal on hover */
   transform: translateY(-5px);
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
 }
@@ -118,8 +165,8 @@ li a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #fff8e1; /* Very light beige background for footer */
-  color: #333;
+  background-color: #004d66; /* Dark teal background for footer */
+  color: #ffffff; /* White text */
   font-size: 1rem;
   display: flex;
   justify-content: center;
@@ -129,14 +176,14 @@ footer {
 }
 
 footer a {
-  color: #80cbc4; /* Pastel teal footer link */
+  color: #66b3b3; /* Light teal footer link */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.4s ease;
 }
 
 footer a:hover {
-  color: #ffab91; /* Soft coral on hover */
+  color: #009090; /* Darker teal on hover */
 }
 
 /* Scrollbar Styling */
@@ -145,95 +192,106 @@ footer a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #80cbc4; /* Pastel teal for scrollbar */
+  background: #66b3b3; /* Light teal for scrollbar */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1976d2;
+  background: #004d66; /* Darker teal on hover */
 }
 
 /* Fade-In Animation */
 @keyframes fadeInUp {
   to {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
 /* Responsive Styles (Mobile and Tablet) */
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  .navbar .menu {
+      flex-direction: column;
+      display: none;
+  }
+  .navbar .menu.active {
+      display: flex;
+  }
+  .navbar .toggle {
+      display: block;
+  }
+
   header h1 {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+      flex-direction: column;
+      gap: 10px;
   }
 
   #searchBar {
-    width: 80%;
-    margin: 15px auto;
+      width: 80%;
+      margin: 15px auto;
   }
 
   section {
-    width: 95%;
-    margin: 20px auto;
+      width: 95%;
+      margin: 20px auto;
   }
 
   section h2 {
-    font-size: 1.2rem;
+      font-size: 1.2rem;
   }
 
   ul {
-    grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   }
 
   li a {
-    font-size: 0.9rem;
-    padding: 12px;
+      font-size: 0.9rem;
+      padding: 12px;
   }
 
   footer {
-    font-size: 0.9rem;
+      font-size: 0.9rem;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   header h1 {
-    font-size: 1.7rem;
+      font-size: 1.7rem;
   }
 
   nav ul {
-    flex-direction: row;
-    gap: 15px;
+      flex-direction: row;
+      gap: 15px;
   }
 
   #searchBar {
-    width: 75%;
-    margin: 20px auto;
+      width: 75%;
+      margin: 20px auto;
   }
 
   section {
-    width: 90%;
-    margin: 25px auto;
+      width: 90%;
+      margin: 25px auto;
   }
 
   section h2 {
-    font-size: 1.4rem;
+      font-size: 1.4rem;
   }
 
   ul {
-    grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
   }
 
   li a {
-    font-size: 1rem;
-    padding: 15px;
+      font-size: 1rem;
+      padding: 15px;
   }
 
   footer {
-    font-size: 1rem;
+      font-size: 1rem;
   }
 }

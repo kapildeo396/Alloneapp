@@ -1,3 +1,9 @@
+// Function to toggle the navigation menu
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+
 // Add some basic animations using JavaScript (e.g., fade-in for sections)
 
 // Function to fade in elements as the page loads
