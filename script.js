@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     sections.forEach((section, index) => {
         section.style.opacity = "0";
-        section.style.transform = "translateY(20px)";
-        section.style.transition = `opacity 0.5s ease ${index * 0.2}s, transform 0.5s ease ${index * 0.2}s`; // Fixed transition syntax
+        section.style.transform = "translateY(10px)";
+        section.style.transition = `opacity 0.3s ease ${index * 0.1}s, transform 0.3s ease ${index * 0.1}s`; // Further reduced transition delay and transform distance
     });
 
     // Set timeout to apply the fade-in effect after loading
@@ -36,31 +36,42 @@ function updateAnimation() {
     if (hours >= 6 && hours < 18) {
         body.classList.remove('night');
         body.classList.add('morning');
-        sun.style.display = 'block';
-        moon.style.display = 'none';
+        if (sun) {
+            sun.style.display = 'block';
+            sun.style.opacity = '0.3'; // Further reduced sun opacity
+            sun.style.boxShadow = '0 0 50px 25px rgba(255, 215, 0, 0.3)'; // Reduced sun brightness
+            sun.style.transition = 'opacity 1s ease-in-out'; // Smooth transition
+            setTimeout(() => sun.style.opacity = '0.15', 2000); // Further reduce opacity
+        }
+        if (moon) moon.style.display = 'none';
     } else {
         body.classList.remove('morning');
         body.classList.add('night');
-        sun.style.display = 'none';
-        moon.style.display = 'block';
+        if (sun) sun.style.display = 'none';
+        if (moon) {
+            moon.style.display = 'block';
+            moon.style.opacity = '0.3'; // Further reduced moon opacity
+            moon.style.transition = 'opacity 1s ease-in-out'; // Smooth transition
+            setTimeout(() => moon.style.opacity = '0.15', 2000); // Further reduce opacity
+        }
     }
 }
 
-// Function to add sun animation for morning
-function addSunAnimation() {
-    const body = document.body;
-    const sun = document.querySelector('.sun');
+// Function to add sun and moon elements
+function addSunAndMoon() {
+    const animationContainer = document.getElementById('animation-container');
 
-    if (body.classList.contains('morning') && !sun) {
+    if (!document.querySelector('.sun')) {
         const sunElement = document.createElement('div');
         sunElement.className = 'sun';
-        document.getElementById('animation-container').appendChild(sunElement);
+        animationContainer.appendChild(sunElement);
     }
 
-    const moon = document.querySelector('.moon');
-    if (body.classList.contains('night') && !moon) {
+    if (!document.querySelector('.moon')) {
         const moonElement = document.createElement('div');
         moonElement.className = 'moon';
-        document.getElementById('animation-container').appendChild(moonElement);
+        animationContainer.appendChild(moonElement);
     }
 }
+
+addSunAndMoon();
