@@ -245,6 +245,32 @@
 
     <!-- Footer -->
     <footer>
+        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Gradient Definitions -->
+            <defs>
+                <!-- Background Gradient -->
+                <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="skyblue" />
+                    <stop offset="100%" stop-color="darkblue" />
+                </radialGradient>
+        
+                <!-- Text Shadow Effect -->
+                <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="yellow" />
+                </filter>
+            </defs>
+        
+            <!-- Outer Circle with Gradient -->
+            <circle cx="50" cy="50" r="45" fill="url(#bgGradient)" stroke="yellow" stroke-width="3" />
+        
+            <!-- Inner Circle for Contrast -->
+            <circle cx="50" cy="50" r="35" fill="white" />
+        
+            <!-- Main Title: indiainfo24.com -->
+            <text x="50" y="55" fill="darkblue" font-size="8" font-family="'Arial', sans-serif" text-anchor="middle" font-weight="bold" filter="url(#textShadow)">
+                indiainfo24.com
+            </text>
+        </svg>         
         <p>© 2024 Government and Education Portal | Filament Web Research Private Limited | Designed by Kapil deo singh</p>
     </footer>
 
