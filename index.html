@@ -36,9 +36,39 @@
             <div class="sun"></div>
             <div class="moon"></div>
         </div>
+        <div class="logo-container">
+            <svg width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+                <!-- Gradient Definitions -->
+                <defs>
+                    <!-- Background Gradient -->
+                    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="skyblue" />
+                        <stop offset="100%" stop-color="darkblue" />
+                    </radialGradient>
+                
+                    <!-- Text Shadow Effect -->
+                    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="yellow" />
+                    </filter>
+                </defs>
+            
+                <!-- Outer Circle with Gradient -->
+                <circle cx="45" cy="45" r="40" fill="url(#bgGradient)" stroke="yellow" stroke-width="1.5" />
+            
+                <!-- Inner Circle for Contrast -->
+                <circle cx="45" cy="45" r="35" fill="white" />
+            
+                <!-- Main Title: indiainfo24.com -->
+                <text x="45" y="50" fill="darkblue" font-size="8" font-family="'Arial', sans-serif" text-anchor="middle" font-weight="bold" filter="url(#textShadow)">
+                    indiainfo24.com
+                </text>
+            </svg>
+        </div>
+
+        <!-- Title -->
         <h1>Government and Education Access Portal</h1>
-        <input type="text" placeholder="Search..." id="searchBar">
     </header>
+
 
     <!-- Navigation Menu -->
     <nav class="navbar">
@@ -342,7 +372,11 @@
             <text x="50" y="55" fill="darkblue" font-size="8" font-family="'Arial', sans-serif" text-anchor="middle" font-weight="bold" filter="url(#textShadow)">
                 indiainfo24.com
             </text>
-        </svg>         
+        </svg>
+        <div class="footer-links">
+            <a href="contact.html">Contact Us</a> |
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>   
         <p>© 2024 Government and Education Portal | Filament Web Research Private Limited | Designed by Kapil deo singh</p>
     </footer>
 

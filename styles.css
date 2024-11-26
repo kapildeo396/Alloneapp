@@ -22,8 +22,19 @@ header {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-  height: 100px; /* Further reduced height */
+  height: 100px; /* Adjusted height for better alignment */
 }
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Centers logo within its container */
+}
+
+.logo-container svg {
+  width: 90px;  /* Adjust the size as needed */
+  height: 90px;
+}
+
 
 /* Animation Container for Header */
 #animation-container {
@@ -178,25 +189,6 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Search Bar Styling */
-#searchBar {
-  display: block;
-  margin: 20px auto;
-  padding: 12px;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.75); /* Slightly transparent white */
-  color: #004d66; /* Dark teal text */
-  font-size: 1rem;
-  outline: none;
-  transition: background 0.4s ease;
-}
-
-#searchBar::placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
 
 /* Section Styling */
 section {
@@ -271,7 +263,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #009090; /* Darker teal on hover */
+  color: #e0e3e3; /* Darker teal on hover */
 }
 
 /* Scrollbar Styling */
