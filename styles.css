@@ -19,20 +19,25 @@ header {
   padding: 15px 30px;
   color: #ffffff; /* White text for contrast */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Align logo and text vertically */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
   height: 100px; /* Adjusted height for better alignment */
 }
 
 .logo-container {
   display: flex;
-  align-items: center; /* Centers logo within its container */
+  align-items: center; /* Centers logo and text together */
+  margin-right: 15px; /* Adds space between logo and text */
 }
 
 .logo-container svg {
-  width: 90px;  /* Adjust the size as needed */
+  width: 90px; /* Adjust the size as needed */
   height: 90px;
+}
+
+h1 {
+  font-size: 24px; /* Font size for the text */
+  margin: 0; /* Removes unnecessary spacing */
 }
 
 
