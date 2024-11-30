@@ -31,15 +31,14 @@ header {
 }
 
 .logo-container svg {
-  width: 90px; /* Adjust the size as needed */
-  height: 90px;
+  width: 70px; /* Adjust the size as needed */
+  height: 70px;
 }
 
 h1 {
   font-size: 24px; /* Font size for the text */
   margin: 0; /* Removes unnecessary spacing */
 }
-
 
 /* Animation Container for Header */
 #animation-container {
@@ -79,6 +78,7 @@ h1 {
   animation: moonRise 10s infinite;
   display: none; /* Hide by default */
 }
+
 
 @keyframes sunRise {
   0% {
