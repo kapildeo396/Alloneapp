@@ -11,6 +11,80 @@ body, html {
   transition: background-color 1s;
 }
 
+/* General Styling */
+.header-container {
+  display: flex;
+  align-items: center; /* Vertically align items in the same line */
+  justify-content: space-between; /* Place title and menu button on opposite ends */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Title Styling */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Menu Links */
+.schemes-links {
+  display: flex;
+  gap: 20px;
+}
+
+.schemes-links a {
+  font-size: 16px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.schemes-links a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Toggle Button (Hidden by Default) */
+.toggle-button {
+  display: none; /* Hidden on large screens */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: auto; /* Push the button to the right */
+}
+
+/* Responsive Styling for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .schemes-links {
+    display: none; /* Hidden by default for toggle */
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .toggle-button {
+    display: inline-block; /* Show toggle button on small screens */
+  }
+
+  .header-container {
+    justify-content: space-between; /* Keep title and toggle button in the same row */
+  }
+}
+
+/* Show Menu when Active */
+.schemes-links.active {
+  display: flex; /* Show menu when toggle is clicked */
+}
+
 /* Header Styling */
 header {
   position: relative;
@@ -46,7 +120,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* Matching reduced header height */
+  height: 100px; /* Reduced header height */
   z-index: -1; /* Ensure it sits behind the header content */
   transition: background-color 1s;
 }
@@ -62,7 +136,7 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 100px 50px rgba(255, 215, 0, 0.5); /* Light around the sun */
   animation: sunRise 10s infinite;
-  display: none; /* Hide by default */
+  display: block; /* Show the sun */
 }
 
 /* Moon Styling */
@@ -76,10 +150,10 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 50px 25px rgba(240, 230, 140, 0.5); /* Light around the moon */
   animation: moonRise 10s infinite;
-  display: none; /* Hide by default */
+  display: block; /* Show the moon */
 }
 
-
+/* Sun Animation */
 @keyframes sunRise {
   0% {
       bottom: -50px;
@@ -103,6 +177,7 @@ h1 {
   }
 }
 
+/* Moon Animation */
 @keyframes moonRise {
   0% {
       top: -50px;
@@ -125,6 +200,7 @@ h1 {
       opacity: 0;
   }
 }
+
 
 header h1 {
   font-size: 1.8rem;
