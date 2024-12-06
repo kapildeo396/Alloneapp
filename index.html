@@ -61,15 +61,17 @@
         <h1>Government and Education Access Portal</h1>
     </header>
 
-    <div class="header-container">
-        <h2 class="section-title">Government Schemes</h2>
-        <button class="toggle-button" id="toggle-schemes">Menu</button>
-        <div class="schemes-links" id="schemes-menu">
-          <a href="women.html">Women Schemes</a>
-          <a href="students.html">Student Schemes</a>
-          <a href="youth.html">Youth Schemes</a>
-        </div>
-    </div>
+    <div class="menu-container">
+        <button id="toggle-schemes" class="menu-button">☰ Government Schemes</button>
+        <nav class="slide-out-menu" id="slide-menu">
+            <button onclick="goToHome()">Home</button>
+            <h2>Government Schemes</h2>
+            <a href="women.html">Women Schemes</a>
+            <a href="students.html">Student Schemes</a>
+            <a href="youth.html">Youth Schemes</a>
+        </nav>
+        <div id="menu-overlay" class="overlay"></div> <!-- Overlay for closing menu -->
+    </div>    
       
     <!-- Navigation Menu -->
     <nav class="navbar">
