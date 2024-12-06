@@ -11,108 +11,136 @@ body, html {
   transition: background-color 1s;
 }
 
-/* General Styling for Menu Container */
 .menu-container {
   position: relative;
-  display: flex;
-  align-items: center;
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* Ensures it stays above other content */
 }
 
-.menu-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
+.desktop-schemes {
+  display: flex; /* Makes the container's children align horizontally */
+  align-items: center; /* Aligns items vertically at the center */
+  justify-content: flex-start; /* Aligns content horizontally */
+  gap: 20px; /* Adds space between the heading and the links */
+}
+
+.desktop-schemes h2 {
+  font-size: 20px;
+  color: #007BFF;
+  margin: 0; /* Removes default margin to align it perfectly */
+  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+}
+
+.schemes-container {
+  display: flex; /* Arranges links horizontally */
+  gap: 15px; /* Space between each link */
+}
+
+.schemes-container a {
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #007BFF;
   border-radius: 5px;
-  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* Ensures links stay on one line */
+}
+
+.schemes-container a:hover {
+  background-color: #007BFF;
+  color: #ffffff;
+}
+
+/* Mobile/Tablet Button */
+.menu-button {
+  display: none;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  z-index: 2000;
+  border-radius: 5px;
 }
 
-.menu-button:hover {
-  background-color: #0056b3;
-}
-
-/* Slide-Out Menu Styling */
+/* Slide-out Menu */
 .slide-out-menu {
   position: fixed;
   top: 0;
-  left: -100%; /* Fully hidden by default */
-  width: 300px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  left: -100%;
+  width: 80%; /* Adjust for smaller screens */
+  max-width: 300px;
+  height: 100vh; /* Full height for better visibility */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  background-color: #f1f1f1;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: left 0.3s ease-in-out; /* Smooth transition */
-  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  z-index: 1001;
 }
 
 .slide-out-menu h2 {
-  font-size: 22px;
+  margin: 0;
   color: #007BFF;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.slide-out-menu a {
-  text-decoration: none;
+.slide-out-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide-out-menu ul li {
+  margin-bottom: 10px;
+}
+
+.slide-out-menu ul li a {
   color: #333;
-  font-size: 18px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.slide-out-menu a:hover {
+.slide-out-menu ul li a:hover {
   color: #007BFF;
 }
 
-/* Active State */
-.slide-out-menu.active {
-  left: 0; /* Slide into view */
-}
-
-/* Hiding the button */
-#toggle-schemes.hidden {
-  display: none; /* Hide the button */
-}
-
-/* Overlay Effect */
+/* Overlay Styling */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 999;
-  display: none; /* Hidden by default */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+
+/* Active States */
+.slide-out-menu.active {
+  left: 0;
 }
 
 .menu-overlay.active {
-  display: block; /* Visible when menu is open */
+  display: block;
 }
 
-.sidebar {
-  display: none; /* To hide the sidebar */
-}
-
-
-/* Responsive Design for Smaller Screens */
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .slide-out-menu {
-    width: 80%; /* Adjust menu width for smaller screens */
+  .desktop-schemes {
+    display: none;
   }
 
-  .menu-container {
-    flex-direction: column; /* Stack elements vertically */
-  }
-
-  header h1 {
-    font-size: 1.5rem; /* Adjust header text size */
+  .menu-button {
+    display: inline-block;
   }
 }
 
+/* Improve Accessibility */
 .slide-out-menu a {
   color: var(--primary-color);
   text-decoration: none;
@@ -122,7 +150,6 @@ body, html {
 .slide-out-menu a:focus {
   outline: 2px solid var(--primary-color); /* Focus outline for keyboard users */
 }
-
 
 /* Header Styling */
 header {

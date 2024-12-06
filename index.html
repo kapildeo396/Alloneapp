@@ -62,16 +62,32 @@
     </header>
 
     <div class="menu-container">
-        <button id="toggle-schemes" class="menu-button">☰ Government Schemes</button>
-        <nav class="slide-out-menu" id="slide-menu">
-            <button onclick="goToHome()">Home</button>
-            <h2>Government Schemes</h2>
+        <div class="desktop-schemes">
+          <h2>Government Schemes</h2>
+          <div class="schemes-container">
             <a href="women.html">Women Schemes</a>
             <a href="students.html">Student Schemes</a>
             <a href="youth.html">Youth Schemes</a>
-        </nav>
-        <div id="menu-overlay" class="overlay"></div> <!-- Overlay for closing menu -->
-    </div>    
+          </div>
+        </div>
+    </div>      
+      
+        <!-- Button for mobile and tablet -->
+        <button class="menu-button" id="menu-toggle">Government Schemes</button>
+      
+        <!-- Slide-out menu -->
+        <div class="slide-out-menu" id="slide-menu">
+          <h2>Government Schemes</h2>
+          <ul>
+            <li><a href="women.html">Women Schemes</a></li>
+            <li><a href="students.html">Student Schemes</a></li>
+            <li><a href="youth.html">Youth Schemes</a></li>
+          </ul>
+        </div>
+      
+        <!-- Overlay for mobile view -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+    </div>
       
     <!-- Navigation Menu -->
     <nav class="navbar">

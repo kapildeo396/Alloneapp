@@ -86,30 +86,19 @@ function addSunAndMoon() {
 addSunAndMoon();
 
 document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.getElementById('toggle-schemes');
-    const menu = document.getElementById('slide-menu');
-    const overlay = document.getElementById('menu-overlay');
-
-    // Check if elements exist before adding event listeners
-    if (menuButton && menu && overlay) {
-        // Toggle menu and hide menu button
-        menuButton.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            menuButton.classList.toggle('hidden');
-        });
-
-        // Close menu when clicking on overlay
-        overlay.addEventListener('click', () => {
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-            menuButton.classList.remove('hidden');
-        });
-    } else {
-        console.error("Menu button, slide menu, or overlay not found.");
-    }
-});
-function goToHome() {
-    window.location.href = 'index.html'; // Replace 'index.html' with your home page file.
-}
-
+    const menuToggle = document.getElementById("menu-toggle");
+    const slideMenu = document.getElementById("slide-menu");
+    const overlay = document.getElementById("menu-overlay");
+  
+    // Open menu
+    menuToggle.addEventListener("click", () => {
+      slideMenu.classList.add("active");
+      overlay.classList.add("active");
+    });
+  
+    // Close menu when clicking outside
+    overlay.addEventListener("click", () => {
+      slideMenu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  });  
