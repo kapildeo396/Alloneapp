@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disability Schemes and Online Application</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    header {
+      background-color: #0056b3;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    .scheme {
+      background-color: #ffffff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .scheme h3 {
+      margin-top: 0;
+    }
+    .apply-form {
+      background-color: #ffffff;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .apply-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .apply-form input, .apply-form textarea, .apply-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .apply-form button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .apply-form button:hover {
+      background-color: #004494;
+    }
+    .links {
+      margin-top: 20px;
+    }
+    .links a {
+      display: block;
+      margin: 5px 0;
+      color: #0056b3;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Disability Schemes and Online Application</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Available Schemes for Persons with Disabilities</h2>
+
+      <div class="scheme">
+        <h3>1. दिव्यांगजन सशक्तिकरण योजना</h3>
+        <p>शिक्षा, कौशल विकास और रोजगार के लिए सहायक उपकरण प्रदान करने की योजना।</p>
+      </div>
+
+      <div class="scheme">
+        <h3>2. पुनर्वास सहायता योजना (ADIP)</h3>
+        <p>सहायक उपकरण जैसे व्हीलचेयर, कृत्रिम अंग, श्रवण यंत्र और ब्रेल किट का वितरण।</p>
+      </div>
+
+      <div class="scheme">
+        <h3>3. राष्ट्रीय दिव्यांग वित्त और विकास निगम (NHFDC)</h3>
+        <p>स्वरोजगार और व्यवसाय शुरू करने के लिए ऋण और वित्तीय सहायता।</p>
+      </div>
+
+      <div class="scheme">
+        <h3>4. प्रधानमंत्री कौशल विकास योजना</h3>
+        <p>कौशल विकास प्रशिक्षण और रोजगार के अवसर।</p>
+      </div>
+
+      <div class="scheme">
+        <h3>5. सुगम्य भारत अभियान</h3>
+        <p>सार्वजनिक स्थानों को दिव्यांग व्यक्तियों के लिए सुलभ बनाना।</p>
+      </div>
+    </section>
+
+    <section class="apply-form">
+      <h2>Online Application Form</h2>
+      <form id="application-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="scheme">Select Scheme:</label>
+        <select id="scheme" name="scheme" required>
+          <option value="empowerment">दिव्यांगजन सशक्तिकरण योजना</option>
+          <option value="adip">पुनर्वास सहायता योजना (ADIP)</option>
+          <option value="nhfdc">राष्ट्रीय दिव्यांग वित्त और विकास निगम (NHFDC)</option>
+          <option value="pmkvy">प्रधानमंत्री कौशल विकास योजना</option>
+          <option value="accessible-india">सुगम्य भारत अभियान</option>
+        </select>
+
+        <label for="message">Additional Information:</label>
+        <textarea id="message" name="message" placeholder="Enter any additional information" rows="5"></textarea>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+
+    <section class="links">
+      <h2>Important Resources</h2>
+      <a href="https://socialjustice.gov.in" target="_blank">Ministry of Social Justice and Empowerment</a>
+      <a href="https://ndfdc.nic.in" target="_blank">National Handicapped Finance and Development Corporation (NHFDC)</a>
+      <a href="https://www.pmkvyofficial.org" target="_blank">Pradhan Mantri Kaushal Vikas Yojana (PMKVY)</a>
+      <a href="https://depwd.gov.in/accessible-india-campaign" target="_blank">Sugamya Bharat Abhiyan</a>
+      <a href="https://nationaltrust.nic.in" target="_blank">The National Trust</a>
+    </section>
+  </main>
+  <!-- JavaScript Code -->
+  <script>
+    // Initialize EmailJS
+    emailjs.init('VKPbs5cs0lS_flxDZ'); // Replace 'VKPbs5cs0lS_flxDZ' with your actual EmailJS API key
+
+    // Handle Form Submission
+    document.getElementById('application-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_hk3gcqe', 'template_ck7cmen', this)
+        .then((response) => {
+          console.log('Email sent successfully!', response);
+          alert('Your application has been submitted successfully!');
+        }, (error) => {
+          console.error('Failed to send email.', error);
+          alert('Failed to submit application. Please try again.');
+        });
+    });
+  </script>
+</body>
+</html>
